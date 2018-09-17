@@ -10,6 +10,39 @@
  */
 
 // Your code :
+function multiply (nb1, nb2) {
+	if (nb1 < 0 && nb2 < 0){
+		if (Math.abs(nb1) > 1) { 
+	  		return Math.abs(nb2) + multiply(Math.abs(nb1) - 1, Math.abs(nb2));
+	  	}
+	  	else{
+	  		return -nb2;
+	  	}
+	}
+	else if (nb2 == 0) {
+		return 0;
+	}
+	
+	else if (nb1 == 0){
+		return 0;
+	}
+	else if (nb2 > 0) {
+	  	if (nb2 > 1) { 
+	  		return nb1 + multiply(nb1, nb2-1);
+	  	}
+	  	else{
+	  		return nb1;
+	  	}
+	}
+	else if (nb2 < 0){
+		if (nb1 > 1) { 
+	  		return nb2 + multiply(nb1 - 1, nb2);
+	  	}
+	  	else{
+	  		return nb2;
+	  	}
+	}
+}
 
 //* Begin of tests
 const assert = require('assert')
