@@ -10,7 +10,12 @@
  *
  */
 function jadenCase (message){
-	return message.toUpperCase();
+	let splitMessage = message.split(" ");
+	let str = "";
+	for (var i = 0; i < splitMessage.length; i++) {
+		splitMessage[i] = splitMessage[i].replace(splitMessage[i].substring(0,1), splitMessage[i].substring(0,1).toUpperCase());
+	}
+	return splitMessage.join(" ");
 }
 
 
@@ -18,11 +23,11 @@ function jadenCase (message){
 const assert = require('assert')
 
 assert.strictEqual(typeof jadenCase, 'function')
-assert.strictEqual(jadenCase("how are you"), "HOW ARE YOU")
-assert.strictEqual(jadenCase("allo"), "ALLO")
-assert.strictEqual(jadenCase("pouet pouet"), "POUET POUET")
-assert.strictEqual(jadenCase("je me fais chier"), "JE ME FAIS CHIER")
-assert.strictEqual(jadenCase("hugo"), "HUGO")
+assert.strictEqual(jadenCase("how are you"), "How Are You")
+assert.strictEqual(jadenCase("allo"), "Allo")
+assert.strictEqual(jadenCase("pouet pouet"), "Pouet Pouet")
+assert.strictEqual(jadenCase("je me fais chier"), "Je Me Fais Chier")
+assert.strictEqual(jadenCase("hugo"), "Hugo")
 
 
 // End of tests */
