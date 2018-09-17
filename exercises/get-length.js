@@ -8,6 +8,9 @@
  */
 
 // Your code :
+function getLength (message){
+	return message.length;
+}
 
 //* Begin of tests
 const assert = require('assert')
