@@ -9,6 +9,32 @@
  */
 
 // Your code :
+function multiply (nb1, nb2){
+	var total = 0;
+	if (nb2 >= 0 && nb1>=0) {
+		for (var i = 0; i < nb2; i++) {
+			total = total + nb1;
+		}
+	}
+	else if (nb2 < 0 && nb1 >=0) {
+		for (var i = 0; i < nb1; i++) {
+			total = total + nb2;
+		}
+	}
+	else if (nb1 <0 && nb2>=0){
+		for (var i = 0; i < nb2; i++) {
+			total = total + nb1;
+		}
+	}
+	else if (nb1 < 0 && nb2 < 0){
+		var nb3 = -(nb1);
+		var nb4 = -(nb2);
+		for (var i = 0; i < nb4; i++) {
+			total = total + nb3;
+		}
+	}
+	return total;
+}
 
 //* Begin of tests
 const assert = require('assert')
